@@ -10,6 +10,7 @@ const Editor = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        // eslint-disable-next-line no-undef
         const response = await window.fetch('/api/events');
         if (!response.ok) throw Error(response.statusText);
         const data = await response.json();
