@@ -15,6 +15,10 @@ export const validateEvent = (event) => {
     errors.title = 'You must enter a title';
   }
 
+  if (event.title.length > 32) {
+    errors.title = 'You must enter a shorter title (32 characters maximum)';
+  }
+
   if (event.speaker === '') {
     errors.speaker = 'You must enter at least one speaker';
   }
