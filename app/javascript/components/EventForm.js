@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
-import { isEmptyObject, validateEvent } from '../helpers/helpers';
+import React, { useState, useRef, useEffect } from 'react';
+import Pikaday from 'pikaday';
+import 'pikaday/css/pikaday.css';
+import PropTypes from 'prop-types';
+import { formatDate, isEmptyObject, validateEvent } from '../helpers/helpers';
 
-const EventForm = () => {
+const EventForm = ({ onSave }) => {
   const [event, setEvent] = useState({
     event_type: '',
     event_date: '',
@@ -12,20 +15,38 @@ const EventForm = () => {
   });
 
   const [formErrors, setFormErrors] = useState({});
+  const dateInput = useRef(null);
 
   const handleInputChange = (e) => {
     const { target } = e;
     const { name } = target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
 
-    setEvent({ ...event, [name]: value });
+    updateEvent(name, value);
   };
+
+  const updateEvent = (key, value) => {
+    setEvent((prevEvent) => ({ ...prevEvent, [key]: value }));
+  };
+
+  useEffect(() => {
+    const p = new Pikaday({
+      field: dateInput.current,
+      onSelect: (date) => {
+        const formattedDate = formatDate(date);
+        dateInput.current.value = formattedDate;
+        updateEvent('event_date', formattedDate);
+      },
+    });
+    // Return a cleanup function.
+    // React will call this prior to unmounting.
+    return () => p.destroy();
+  }, []);
 
   const renderErrors = () => {
     if (isEmptyObject(formErrors)) {
       return null;
     }
-
     return (
       <div className="errors">
         <h3>The following errors prohibited the event from being saved:</h3>
@@ -45,7 +66,7 @@ const EventForm = () => {
     if (!isEmptyObject(errors)) {
       setFormErrors(errors);
     } else {
-      console.log(event);
+      onSave(event);
     }
   };
 
@@ -73,7 +94,8 @@ const EventForm = () => {
               type="text"
               id="event_date"
               name="event_date"
-              onChange={handleInputChange}
+              ref={dateInput}
+              autoComplete="off"
             />
           </label>
         </div>
@@ -131,3 +153,8 @@ const EventForm = () => {
 };
 
 export default EventForm;
+
+EventForm.propTypes = {
+  // eslint-disable-next-line react/no-unused-prop-types
+  onSave: PropTypes.func.isRequired,
+};
