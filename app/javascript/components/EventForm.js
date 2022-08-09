@@ -17,16 +17,16 @@ const EventForm = ({ onSave }) => {
   const [formErrors, setFormErrors] = useState({});
   const dateInput = useRef(null);
 
+  const updateEvent = (key, value) => {
+    setEvent((prevEvent) => ({ ...prevEvent, [key]: value }));
+  };
+
   const handleInputChange = (e) => {
     const { target } = e;
     const { name } = target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
 
     updateEvent(name, value);
-  };
-
-  const updateEvent = (key, value) => {
-    setEvent((prevEvent) => ({ ...prevEvent, [key]: value }));
   };
 
   useEffect(() => {

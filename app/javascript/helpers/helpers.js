@@ -1,4 +1,4 @@
-export const isEmptyObject = obj => Object.keys(obj).length === 0;
+export const isEmptyObject = (obj) => Object.keys(obj).length === 0;
 
 export const validateEvent = (event) => {
   const errors = {};
@@ -37,4 +37,3 @@ export const formatDate = (d) => {
 
   return `${YYYY}-${MM}-${DD}`;
 };
-

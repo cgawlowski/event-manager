@@ -13,6 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
       <BrowserRouter>
         <App />
       </BrowserRouter>
-    </StrictMode>
+    </StrictMode>,
   );
 });
