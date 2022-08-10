@@ -6,12 +6,10 @@ import { formatDate, isEmptyObject, validateEvent } from '../helpers/helpers';
 
 const EventForm = ({ onSave }) => {
   const [event, setEvent] = useState({
-    event_type: '',
-    event_date: '',
-    title: '',
-    speaker: '',
-    host: '',
-    published: false,
+    event_title: '',
+    event_description: '',
+    start_date: '',
+    end_date: '',
   });
 
   const [formErrors, setFormErrors] = useState({});
@@ -35,7 +33,7 @@ const EventForm = ({ onSave }) => {
       onSelect: (date) => {
         const formattedDate = formatDate(date);
         dateInput.current.value = formattedDate;
-        updateEvent('event_date', formattedDate);
+        updateEvent('start_date', formattedDate);
       },
     });
     // Return a cleanup function.
@@ -77,69 +75,48 @@ const EventForm = ({ onSave }) => {
       <h2>New Event</h2>
       <form className="eventForm" onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="event_type">
-            <strong>Type:</strong>
+          <label htmlFor="event_title">
+            <strong>Title:</strong>
             <input
               type="text"
-              id="event_type"
-              name="event_type"
+              id="event_title"
+              name="event_title"
               onChange={handleInputChange}
             />
           </label>
         </div>
         <div>
-          <label htmlFor="event_date">
-            <strong>Date:</strong>
+          <label htmlFor="start_date">
+            <strong>Start date:</strong>
             <input
-              type="text"
-              id="event_date"
-              name="event_date"
+              type="date"
+              id="start_date"
+              name="start_date"
               ref={dateInput}
               autoComplete="off"
             />
           </label>
         </div>
         <div>
-          <label htmlFor="title">
-            <strong>Title:</strong>
+          <label htmlFor="end_date">
+            <strong>End date:</strong>
+            <input
+              type="date"
+              id="end_date"
+              name="end_date"
+              ref={dateInput}
+              autoComplete="off"
+            />
+          </label>
+        </div>
+        <div>
+          <label htmlFor="event_description">
+            <strong>Description:</strong>
             <textarea
               cols="30"
               rows="10"
-              id="title"
-              name="title"
-              onChange={handleInputChange}
-            />
-          </label>
-        </div>
-        <div>
-          <label htmlFor="speaker">
-            <strong>Speakers:</strong>
-            <input
-              type="text"
-              id="speaker"
-              name="speaker"
-              onChange={handleInputChange}
-            />
-          </label>
-        </div>
-        <div>
-          <label htmlFor="host">
-            <strong>Hosts:</strong>
-            <input
-              type="text"
-              id="host"
-              name="host"
-              onChange={handleInputChange}
-            />
-          </label>
-        </div>
-        <div>
-          <label htmlFor="published">
-            <strong>Publish:</strong>
-            <input
-              type="checkbox"
-              id="published"
-              name="published"
+              id="event_description"
+              name="event_description"
               onChange={handleInputChange}
             />
           </label>

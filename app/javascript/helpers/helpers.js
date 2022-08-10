@@ -3,28 +3,12 @@ export const isEmptyObject = (obj) => Object.keys(obj).length === 0;
 export const validateEvent = (event) => {
   const errors = {};
 
-  if (event.event_type === '') {
-    errors.event_type = 'You must enter an event type';
+  if (event.event_title === '') {
+    errors.event_title = 'You must enter an event title';
   }
 
-  if (event.event_date === '') {
-    errors.event_date = 'You must enter a valid date';
-  }
-
-  if (event.title === '') {
-    errors.title = 'You must enter a title';
-  }
-
-  if (event.title.length > 32) {
-    errors.title = 'You must enter a shorter title (32 characters maximum)';
-  }
-
-  if (event.speaker === '') {
-    errors.speaker = 'You must enter at least one speaker';
-  }
-
-  if (event.host === '') {
-    errors.host = 'You must enter at least one host';
+  if (event.event_title.length > 32) {
+    errors.event_title = 'You must enter a shorter title (32 characters maximum)';
   }
 
   return errors;

@@ -9,34 +9,24 @@ const Event = ({ events }) => {
   return (
     <div className="eventContainer">
       <h2>
-        {event.event_date}
-        {' - '}
-        {event.event_type}
+        {event.event_title}
       </h2>
       <ul>
         <li>
-          <strong>Type: </strong>
-          {event.event_type}
-        </li>
-        <li>
-          <strong>Date: </strong>
-          {event.event_date}
-        </li>
-        <li>
           <strong>Title: </strong>
-          {event.title}
+          {event.event_title}
         </li>
         <li>
-          <strong>Speaker: </strong>
-          {event.speaker}
+          <strong>Start date: </strong>
+          {event.start_date}
         </li>
         <li>
-          <strong>Host: </strong>
-          {event.host}
+          <strong>End date: </strong>
+          {event.end_date}
         </li>
         <li>
-          <strong>Published: </strong>
-          {event.published ? 'yes' : 'no'}
+          <strong>Description: </strong>
+          {event.event_description}
         </li>
       </ul>
     </div>
@@ -47,12 +37,10 @@ Event.propTypes = {
   events: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
-      event_type: PropTypes.string.isRequired,
-      event_date: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-      speaker: PropTypes.string.isRequired,
-      host: PropTypes.string.isRequired,
-      published: PropTypes.bool.isRequired,
+      event_title: PropTypes.string.isRequired,
+      start_date: PropTypes.string.isRequired,
+      end_date: PropTypes.string.isRequired,
+      event_description: PropTypes.string.isRequired,
     }),
   ).isRequired,
 };
