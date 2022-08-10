@@ -1,50 +1,32 @@
 [
   {
-    "event_type": "Symposium",
-    "event_date": "2022-07-14",
-    "title": "Ada Lovelace — The Making of a Computer Scientist",
-    "speaker": "Monica S. Lam, Yoky Matsuoka, Dorit Aharonov",
-    "host": "Ursula Martin",
-    "published": false
+    "event_title": "Festival International de Jazz de Montréal",
+    "event_description": "Consacré par les Guinness World Records comme le plus grand festival de jazz de la planète, le Festival International de Jazz de Montréal est, depuis maintenant 40 ans, synonyme de passion musicale. La métropole francophone d’Amérique devient chaque année, pendant une dizaine de jours, le lieu de rendez-vous des amateurs de toutes les musiques liées au jazz. Le tout sur un site unique au monde ouvert de midi à minuit et conçu pour répondre à tous les besoins des festivaliers, au beau milieu d’un centre-ville fermé à la circulation automobile. Bref, pendant ces semaines magiques, c’est à Montréal que bat le cœur de la planète jazz !",
+    "start_date": "2022-06-01",
+    "end_date": "2022-06-15"
   },
   {
-    "event_type": "Colloquium",
-    "event_date": "2022-04-12",
-    "title": "Scholasticism in Medieval and Early Modern History",
-    "speaker": "Robin Fleming",
-    "host": "Henry Louis Gates Jr.",
-    "published": true
+    "event_title": "Juste pour Rire",
+    "event_description": "De nos humbles débuts au Théâtre St-Denis de Montréal en 1983 jusqu’à devenir un chef de file mondial dans l’industrie de l’humour, on a fait du rire notre spécialité. Chaque année, on fait rire des millions de personnes avec des festivals et productions ici à la maison, et partout dans le monde. Le rire, on le crée. C’est notre métier, notre art, notre marque. Tout ce qu’on dit, tout ce qu’on fait, repousse les limites du rire et de la comédie. Et ce n’est que le début.",
+    "start_date": "2022-06-15",
+    "end_date": "2022-06-30"
   },
   {
-    "event_type": "Symposium",
-    "event_date": "2022-03-30",
-    "title": "Charles II and the English Restoration",
-    "speaker": "Kate Williams, Patrick Morrah, Charles Spencer",
-    "host": "Lucy Worsley",
-    "published": true
+    "event_title": "Festival MURAL",
+    "event_description": "Montreal’s MURAL Festival is an eleven day event celebrating the international urban art movement. Championing live art, music, exhibitions and artist talks, the Festival is an important gathering of the global artistic community. World class musicians and visual artists collaborate for a cultural celebration in the heart of Montreal on the Saint-Laurent Boulevard.",
+    "start_date": "2022-07-01",
+    "end_date": "2022-07-15"
   },
   {
-    "event_type": "Symposium",
-    "event_date": "2022-03-01",
-    "title": "Remembering the Titanic, One of the Greatest Ever Maritime Tragedies",
-    "speaker": "William Hazelgrove, Lauren Tarshis, Andrew Wilson",
-    "host": "Dan Snow",
-    "published": true
+    "event_title": "Les Francofolies",
+    "event_description": "Les Francofolies sont un festival de musique créé en 1985 à La Rochelle en Charente-Maritime à l'initiative de Michel Crépeau qui en confie la direction à Jean-Louis Foulquier, et qui a lieu tous les ans au mois de juillet.",
+    "start_date": "2022-06-01",
+    "end_date": "2022-06-15"
   },
   {
-    "event_type": "Symposium",
-    "event_date": "2022-02-07",
-    "title": "Symbolism in Portraits of Queen Elizabeth I",
-    "speaker": "David Starkey, Susan Doran, Alison Weir",
-    "host": "Suzannah Lipscomb",
-    "published": true
-  },
-  {
-    "event_type": "Colloquium",
-    "event_date": "2021-12-19",
-    "title": "A Brief History Of China's Dynasties",
-    "speaker": "Iris Chang",
-    "host": "Pamela Kyle Crossley",
-    "published": true
+    "event_title": "Carnaval de Dunkerque",
+    "event_description": "Every year for hundreds of years the people of Dunkerque have recalled the sacrifices of their local fishermen with a carnival – not just any old carnival but one of the noisiest and oddest carnivals in France!",
+    "start_date": "2022-07-15",
+    "end_date": "2022-07-30"
   }
 ]
