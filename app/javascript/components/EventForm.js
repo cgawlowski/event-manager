@@ -34,6 +34,7 @@ const EventForm = ({ onSave }) => {
         const formattedDate = formatDate(date);
         dateInput.current.value = formattedDate;
         updateEvent('start_date', formattedDate);
+        updateEvent('end_date', formattedDate);
       },
     });
     // Return a cleanup function.
