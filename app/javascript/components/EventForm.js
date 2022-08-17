@@ -93,8 +93,7 @@ const EventForm = ({ onSave }) => {
               type="date"
               id="start_date"
               name="start_date"
-              ref={dateInput}
-              autoComplete="off"
+              onChange={handleInputChange}
             />
           </label>
         </div>
@@ -105,8 +104,7 @@ const EventForm = ({ onSave }) => {
               type="date"
               id="end_date"
               name="end_date"
-              ref={dateInput}
-              autoComplete="off"
+              onChange={handleInputChange}
             />
           </label>
         </div>
