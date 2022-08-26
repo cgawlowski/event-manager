@@ -63,4 +63,4 @@ group :test do
   gem 'launchy'
 end
 
-gem "shakapacker", "= 6.5"
+gem "shakapacker", "= 6.2.1"
