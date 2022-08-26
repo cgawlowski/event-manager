@@ -9,7 +9,7 @@ if (isDevelopment && inliningCss) {
       overlay: {
         sockPort: webpackConfig.devServer.port,
       },
-    })
+    }),
   );
 }
 
