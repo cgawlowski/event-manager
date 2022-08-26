@@ -1,5 +1,5 @@
-import { webpackConfig, inliningCss } from 'shakapacker';
-import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
+const { webpackConfig, inliningCss } = require('shakapacker');
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
 const isDevelopment = process.env.NODE_ENV !== 'production';
 
@@ -13,4 +13,4 @@ if (isDevelopment && inliningCss) {
   );
 }
 
-export default webpackConfig;
+module.exports = webpackConfig;
