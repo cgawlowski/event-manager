@@ -30,6 +30,12 @@
   "browserslist": [
     "defaults"
   ],
+  "babel": {
+    "presets": [
+      "./node_modules/shakapacker/package/babel/preset.js",
+      "@babel/preset-react"
+    ]
+  },
   "devDependencies": {
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.7",
     "eslint": "^8.21.0",
