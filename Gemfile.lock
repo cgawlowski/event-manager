@@ -131,7 +131,6 @@ GEM
     nokogiri (1.13.8)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
-    pg (1.4.3)
     public_suffix (4.0.7)
     puma (5.6.4)
       nio4r (~> 2.0)
@@ -179,7 +178,7 @@ GEM
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
     semantic_range (3.0.0)
-    shakapacker (6.2.1)
+    shakapacker (6.5.0)
       activesupport (>= 5.2)
       rack-proxy (>= 0.6.1)
       railties (>= 5.2)
@@ -191,6 +190,7 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
+    sqlite3 (1.4.4)
     strscan (3.0.4)
     thor (1.2.1)
     timeout (0.3.0)
@@ -222,12 +222,12 @@ DEPENDENCIES
   debug
   jbuilder
   launchy
-  pg
   puma (~> 5.0)
   rails (~> 7.0.3, >= 7.0.3.1)
   selenium-webdriver
-  shakapacker (= 6.2.1)
+  shakapacker (= 6.5)
   sprockets-rails
+  sqlite3 (~> 1.4)
   tzinfo-data
   web-console
   webdrivers
@@ -236,4 +236,4 @@ RUBY VERSION
    ruby 2.7.1p83
 
 BUNDLED WITH
-   2.3.21
+   2.1.4
