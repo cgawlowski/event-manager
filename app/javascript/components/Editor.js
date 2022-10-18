@@ -32,6 +32,7 @@ const Editor = () => {
 
   const addEvent = async (newEvent) => {
     try {
+      // eslint-disable-next-line no-undef
       const response = await window.fetch('/api/events', {
         method: 'POST',
         body: JSON.stringify(newEvent),
@@ -72,6 +73,6 @@ const Editor = () => {
       </div>
     </>
   );
-}
+};
 
 export default Editor;
