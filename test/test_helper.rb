@@ -19,7 +19,7 @@ class ActiveSupport::TestCase
   #fixtures :all
 
   # Add more helper methods to be used by all tests here...
-  extend Minitest::Spec::DS
+  extend Minitest::Spec::DSL
 end
 
 class ActionDispatch::IntegrationTest
