@@ -2,6 +2,15 @@ ENV["RAILS_ENV"] ||= "test"
 require_relative "../config/environment"
 require "rails/test_help"
 
+#Use Spec DSL
+require 'minitest/spec'
+
+#Helpers
+require 'capybara/rails'
+require 'mocha/minitest'
+
+Minitest::Reporters.use!(Minitest::Reporters::ProgressReporter.new(color: true),ENV,Minitest.backtrace_filter)
+
 class ActiveSupport::TestCase
   # Run tests in parallel with specified workers
   parallelize(workers: :number_of_processors)
@@ -10,13 +19,9 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
-  include Warden::Test::Helpers
-  Warden.test_mode!
+  extend Minitest::Spec::DSL
 end
 
-Capybara.register_driver :headless_chrome do |app|
-  options = Selenium::WebDriver::Chrome::Options.new(args: %w[no-sandbox headless disable-gpu window-size=1400,900])
-  Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
+class ActionDispatch::IntegrationTest
+  include Capybara::DSL
 end
-Capybara.save_path = Rails.root.join('tmp/capybara')
-Capybara.javascript_driver = :headless_chrome
