@@ -1,14 +1,14 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: Festival de Jazz de Montréal
-  description: MyString1
+  event_title: Festival de Jazz de Montréal
+  event_description: MyString1
   start_date: 2022-09-04 18:13:27
   end_date: 2022-09-04 18:13:27
 
 two:
-  name: Juste pour Rire
-  description: MyString2
+  event_title: Juste pour Rire
+  event_description: MyString2
   start_date: 2022-09-04 18:13:27
   end_date: 2022-09-04 18:13:27
   
