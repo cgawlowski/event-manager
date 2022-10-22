@@ -4,6 +4,7 @@ import 'pikaday/css/pikaday.css';
 import PropTypes from 'prop-types';
 import { formatDate, isEmptyObject, validateEvent } from '../helpers/helpers';
 
+// Defining two variables in state: event and formErrors.
 const EventForm = ({ onSave }) => {
   const [event, setEvent] = useState({
     event_title: '',
@@ -18,7 +19,8 @@ const EventForm = ({ onSave }) => {
   const updateEvent = (key, value) => {
     setEvent((prevEvent) => ({ ...prevEvent, [key]: value }));
   };
-
+  // handleInputChange function will be called whenever the user changes the values of any field
+  // and it will update the event object, so that it mirrors what has been entered into the form.
   const handleInputChange = (e) => {
     const { target } = e;
     const { name } = target;

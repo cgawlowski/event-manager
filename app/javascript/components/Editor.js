@@ -5,14 +5,32 @@ import EventList from './EventList';
 import Event from './Event';
 import EventForm from './EventForm';
 
+// Basically here we 1) contact our API,
+// 2) grab a list of event
+// 3) and pass them to the <EventList> component, so that it can display them on the page.
+
+// We employ the useState hook to declare three variables in state (events, isLoading and isError),
+// as well as functions to set the values of these variables.
+// We also assign them some initial values.
+
 const Editor = () => {
   const [events, setEvents] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
   const navigate = useNavigate();
 
+  // Next comes a useEffect hook to handle our data fetching.
+  // As we are passing it an empty array as a second argument,
+  // this will run once when the component is rendered.
+
   useEffect(() => {
+    // Inside the useEffect hook, we declare a fetchData function,
+    // which uses the Fetch API to hit the /api/events endpoint.
+    // Assuming this returns a valid JSON response (a list of events),
+    // we save that to the events variable in state.
     const fetchData = async () => {
+      // The data fetching happens within a try... catch block,
+      // so that we can handle any errors that might occur
       try {
         // eslint-disable-next-line no-undef
         const response = await window.fetch('/api/events');
@@ -23,10 +41,12 @@ const Editor = () => {
         setIsError(true);
         console.error(error);
       }
-
+      // Once the data fetching has completed, we set the isLoading variable to false.
       setIsLoading(false);
     };
-
+    // The last thing we do is to invoke the fetchData function.
+    // We need a separate function here, as we cannot mark the callback function we pass
+    // to the useEffect hook as being async.
     fetchData();
   }, []);
 
@@ -46,6 +66,7 @@ const Editor = () => {
       const savedEvent = await response.json();
       const newEvents = [...events, savedEvent];
       setEvents(newEvents);
+      // eslint-disable-next-line no-undef
       window.alert('Event Added!');
       navigate(`/events/${savedEvent.id}`);
     } catch (error) {
@@ -53,6 +74,11 @@ const Editor = () => {
     }
   };
 
+  // we return some JSX. This consists of the <Header> component
+  // then either an error message, a loading message, or the <EventList> component
+  // to which we pass a list of events.
+  // The <Editor> component works out which of these to render based on
+  // the value of the isError and isLoading variables we declared previously.
   return (
     <>
       <Header />
