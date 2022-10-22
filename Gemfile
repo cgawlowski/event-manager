@@ -53,6 +53,8 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+  gem "guard"
+  gem "guard-minitest"
 end
 
 group :test do
@@ -61,6 +63,10 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
   gem 'launchy'
+  #Added Testing gems
+  gem 'minitest-reporters'
+  gem 'factory_bot_rails'
+  gem 'mocha'
 end
 
 gem "shakapacker", "= 6.5"

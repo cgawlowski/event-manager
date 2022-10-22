@@ -81,7 +81,7 @@ const Editor = () => {
     }
   };
 
-  // we return some JSX. This consists of the <Header> component
+  // Here we return some JSX: the <Header> component
   // then either an error message, a loading message, or the <EventList> component
   // to which we pass a list of events.
   // The <Editor> component works out which of these to render based on

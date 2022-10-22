@@ -6,9 +6,8 @@ class EventsTest < ApplicationSystemTestCase
 
     #exercise
     visit root_url
-
     #verify
-    assert_selector "h1", text: "Event manager"
+    assert_selector "h1", text: "Event Manager"
 
     # teardown
   end
