@@ -44,6 +44,9 @@ const EventForm = ({ onSave }) => {
     return () => p.destroy();
   }, []);
 
+  // renderErrors returns null if the formErrors object is empty,
+  // or otherwise some JSX representing a warning that the form could not be saved,
+  // as well as a list of errors.
   const renderErrors = () => {
     if (isEmptyObject(formErrors)) {
       return null;
@@ -60,10 +63,14 @@ const EventForm = ({ onSave }) => {
     );
   };
 
+  // handleSubmit function  validates the user’s input (and check that each field has a value)
+  // and either display an error message if anything is missing
   const handleSubmit = (e) => {
     e.preventDefault();
     const errors = validateEvent(event);
 
+    // isEmptyObject returns true or false
+    // depending on whether the object it is passed has any properties or not.
     if (!isEmptyObject(errors)) {
       setFormErrors(errors);
     } else {

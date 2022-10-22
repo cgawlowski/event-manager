@@ -50,6 +50,8 @@ const Editor = () => {
     fetchData();
   }, []);
 
+  // addEvent method receives a newEvent object and then launches a request
+  // to our API to create a new event using that data.
   const addEvent = async (newEvent) => {
     try {
       // eslint-disable-next-line no-undef
@@ -63,12 +65,17 @@ const Editor = () => {
       });
       if (!response.ok) throw Error(response.statusText);
 
+      // If the request is successful, it will add the newly created event to the array of events
+      // that are being held in state and the UI will update accordingly.
       const savedEvent = await response.json();
       const newEvents = [...events, savedEvent];
       setEvents(newEvents);
       // eslint-disable-next-line no-undef
       window.alert('Event Added!');
+      // If the request is successfull, the navigate function (from the useNavigate hook)
+      // will change the URL to that of the newly created event.
       navigate(`/events/${savedEvent.id}`);
+      // If the API request is not successful,the error is logged to the console.
     } catch (error) {
       console.error(error);
     }

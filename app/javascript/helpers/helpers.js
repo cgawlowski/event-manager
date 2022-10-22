@@ -1,5 +1,8 @@
 export const isEmptyObject = (obj) => Object.keys(obj).length === 0;
 
+// validateEvent runs a bunch of checks on the event object
+// (an event title must be entered, and it should be < 32 characters)
+// and returns an object containing any errors
 export const validateEvent = (event) => {
   const errors = {};
 
